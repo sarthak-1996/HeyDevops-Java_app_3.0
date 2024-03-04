@@ -73,6 +73,14 @@ pipeline{
                }
             }
         }
+        stage('Put Artifactory:JFrog'){
+            when { expression { params.action == 'create' } }
+            steps{
+                script{
+                    putArticatory()
+                }
+            }
+        }
         stage('Docker Image Build'){
          when { expression {  params.action == 'create' } }
             steps{
