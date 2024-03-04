@@ -11,6 +11,7 @@ pipeline{
         string(name: 'ImageName', description: "name of the docker build", defaultValue: 'javapp')
         string(name: 'ImageTag', description: "tag of the docker build", defaultValue: 'v1')
         string(name: 'DockerHubUser', description: "name of the Application", defaultValue: 'sarthakxxx03875')
+        string(name: 'jfrogServer', description: 'IP of the Jfrog Server', defaultValue: '0.0.0.0')
     }
 
     stages{
@@ -77,7 +78,7 @@ pipeline{
             when { expression { params.action == 'create' } }
             steps{
                 script{
-                    putArticatory()
+                    putArticatory("${params.jfrogServer}")
                 }
             }
         }
