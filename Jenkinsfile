@@ -4,9 +4,6 @@ pipeline{
 
     agent any
     //agent { label 'Demo' }
-    // agent {
-    //     label 'worker1'
-    // }
 
     parameters{
 
