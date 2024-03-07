@@ -79,11 +79,11 @@ pipeline{
         }
         stage('Put Artifactory:JFrog'){
             when { expression { params.action == 'create' } }
-            steps{
-                script{
-                    putArticatory("${params.jfrogServer}")
+                steps{
+                    script{
+                        putArticatory("${params.jfrogServer}")
+                    }
                 }
-            }
         }
         stage('Docker Image Build'){
          when { expression {  params.action == 'create' } }
