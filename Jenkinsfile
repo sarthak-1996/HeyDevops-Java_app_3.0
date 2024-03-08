@@ -3,7 +3,10 @@
 pipeline{
 
     agent any
-    //agent { label 'Demo' }
+    agent {
+        label "dev"
+    }
+    // agent { label 'Demo' }
 
     parameters{
 
