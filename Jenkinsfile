@@ -22,10 +22,10 @@ pipeline{
         stage('Git Checkout'){
                     when { expression {  params.action == 'create' } }
             steps{
-            gitCheckout(
-                branch: "main",
-                url: "https://github.com/sarthak-1996/HeyDevops-Java_app_3.0.git"
-            )
+                gitCheckout(
+                    branch : "main",
+                    url : "https://github.com/sarthak-1996/HeyDevops-Java_app_3.0.git"
+                )
             }
         }
          stage('Unit Test maven'){
